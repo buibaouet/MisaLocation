@@ -1,0 +1,150 @@
+﻿/* thiet lap cac thuoc tinh css chung giua cac man hinh */
+body {
+    font-size: 14px;
+}
+
+.active {
+    background-color: #1b8bd4 !important;
+    color: #fff !important;
+}
+
+.custom-nav-header {
+    height: 61px;
+    background-color: #2f4050;
+    background-image: url(../../css/patterns/header-profile.png);
+}
+
+.btn {
+    font-weight: bold;
+}
+
+button[data-toggle="dropdown"] {
+    font-weight: normal;
+}
+
+input[type=file], input.mini-search, input.form-control-sm {
+    height: 35px !important;
+}
+
+input {
+    height: 47px !important;
+    color: #060606;
+    outline: none;
+}
+
+.input-error {
+    color: #ff0000;
+    font-size: 11px;
+}
+
+    input.mini-search:focus {
+        border: 2px solid #17a2b8 !important;
+    }
+
+.modal input {
+    height: calc(1.8125rem + 2px) !important;
+    font-size: 13px;
+}
+
+.modal th {
+    font-weight: normal;
+}
+
+::-webkit-scrollbar {
+    width: 8px !important;
+    height: 8px !important;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px !important;
+    background: #9e9e9e !important;
+}
+
+.logo-img {
+    height: 50px;
+    width: 50px;
+    background-image: url("../../img/logo.svg");
+    background-repeat: no-repeat;
+    background-size: 350%;
+    background-position: 1px 4px;
+}
+
+.custom-nav-header .navbar-brand {
+    color: #fff;
+    height: 100%;
+}
+
+    .custom-nav-header .navbar-brand:hover {
+        background-color: transparent !important;
+    }
+
+.custom-nav-header .logo-element {
+    height: 61px;
+    justify-content: center;
+}
+
+.nav > li.selected {
+    border-left: 4px solid #19aa8d;
+    background: #293846;
+}
+
+    .nav > li.selected > a {
+        color: #ffffff;
+    }
+
+
+.profile-element img {
+    height: 48px;
+    width: 48px;
+}
+
+.footer {
+    text-align: center;
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 0.875rem;
+}
+
+/* override template styles */
+.navbar.navbar-static-top {
+    background-color: #2f4050;
+}
+
+.nav.navbar-right > li > a {
+    color: #fff;
+}
+
+.text-muted {
+    color: #fff !important;
+}
+
+/* end */
+
+.dropdown-menu.dropdown-menu-right {
+    background-color: #f6f6f6;
+}
+
+    .dropdown-menu.dropdown-menu-right .dropdown-item:first-child {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        background-color: #f1f1f1;
+    }
+
+    .dropdown-menu.dropdown-menu-right .dropdown-item:first-child input.mini-search {
+        width: 100%;
+        height: 100%;
+    }
+
+.dropdown-menu a.dropdown-item {
+    color: rgb(62, 85, 105);
+}
+
+
+
+/* end custom scrollbar */
+
+@media (max-width: 576px) {
+    .footer {
+        font-size: 0.6rem;
+    }
+}

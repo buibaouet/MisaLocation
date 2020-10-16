@@ -1,0 +1,17 @@
+﻿.scrollable-table {
+    position: relative;
+    display: block;
+    max-height: 600px;
+    overflow-y: auto;
+}
+
+.dt-buttons.btn-group {
+    display: none;
+}
+
+#tbl-filechanges thead th {
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+}

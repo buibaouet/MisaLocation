@@ -1,0 +1,307 @@
+﻿@{
+    ViewData["Title"] = "Monitor";
+}
+
+@section css {
+    <link href="~/css/views/monitor/monitor.css" rel="stylesheet" asp-append-version="true" />
+}
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <!-- Column -->
+
+        <div class=" col-lg-4">
+            <div class="ibox">
+                <div class="card card-hover">
+                    <div class="box bg-success text-center">
+                        <!-- <h1 class="text-white fa fa-address-card m-b-5 font-36"></h1> -->
+                        <h2 class="text-white">Số lượt lấy thông tin</h2> <br>
+                        <p class="text-white m-b-0 m-t-5 display-3" id="total-requests">100,000</p><br>
+                        <div class="row">
+                            <div class="col-4 text-center p-t-10">
+                                <h2 class="mb-0 font-weight-bold text-warning">1,234</h2>
+                                <h4 class="text-white">Tỉnh/Thành phố</h4>
+                            </div>
+                            <div class="col-4 border-left text-center p-t-10">
+                                <h2 class="mb-0 font-weight-bold text-warning">802</h2>
+                                <h4 class="text-white">Quận/Huyện/TX</h4>
+                            </div>
+                            <div class="col-4 border-left text-center p-t-10">
+                                <h2 class="mb-0 font-weight-bold text-warning">802</h2>
+                                <h4 class="text-white">Xã/Phường</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Column -->
+
+        <div class="col-lg-4">
+            <div class="ibox">
+                <div class="card card-hover">
+                    <div class="box bg-split-number text-center">
+                        <!-- <h1 class="text-white fa fa-check-circle m-b-5 font-36"></h1> -->
+                        <h2 class="text-white">Số lượt phân tách</h2><br>
+                        <p class="text-white m-b-0 m-t-5 display-3" id="total-orgs">1,060,000</p><br>
+                        <div class="row">
+                            <div class="col-12 text-center p-t-10">
+                                <h2 class="mb-0 font-weight-bold text-warning">999,999</h2>
+                                <h4 class="text-white">Phân tách thành công</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Column -->
+        <div class="col-lg-4">
+            <div class="ibox">
+                <div class="card card-hover">
+                    <div class="box bg-primary text-center">
+                        <!-- <h1 class="text-white fa fa-check-circle m-b-5 font-36"></h1> -->
+                        <h2 class="text-white">Thông tin hệ thống</h2><br>
+                        <p class="text-white m-b-0 m-t-5 display-3" id="total-orgs">Hoạt Động</p><br>
+                        <div class="row">
+                            <div class="col-12 text-center p-t-10">
+                                <h2 class="mb-0 font-weight-bold text-light"><i class=" fa fa-cog fa-spin slow-spin"></i></h2>
+                                <h4 class="text-white">Phân tách thành công</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Column -->
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="card card-hover">
+                    <div class="box bg-white text-center">
+                        <div class="row">
+                            <div class="col-12 date-box">
+                                <h2 class="text-center p-t-20">Lấy thông tin</h2><hr>
+                                <div class="row">
+                                    <div class=" col-lg-4">
+                                        <h3 class="text-center">Theo ngày</h3>
+                                        <canvas id="loc-by-day"></canvas>
+                                    </div>
+                                    <div class=" col-lg-4">
+                                        <h3 class="text-center">Theo thiết bị</h3>
+                                        <canvas id="loc-by-device"></canvas>
+                                    </div>
+                                    <div class=" col-lg-4">
+                                        <h3 class="text-center">Theo ứng dụng</h3>
+                                        <canvas id="loc-by-app"></canvas>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="card card-hover">
+                    <div class="box bg-white text-center">
+                        <div class="row">
+                            <div class="col-12 time-box">
+                                <h2 class="text-center p-t-20">Phân tách</h2><hr>
+                                <div class="row">
+                                    <div class=" col-lg-4">
+                                        <h3 class="text-center">Theo ngày</h3>
+                                        <canvas id="sep-by-day"></canvas>
+                                    </div>
+                                    <div class=" col-lg-4">
+                                        <h3 class="text-center">Theo thiết bị</h3>
+                                        <canvas id="sep-by-device"></canvas>
+                                    </div>
+                                    <div class=" col-lg-4">
+                                        <h3 class="text-center">Theo ứng dụng</h3>
+                                        <canvas id="sep-by-app"></canvas>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class=" col-lg-6" id="table" style="overflow: auto;">
+            <div class="ibox">
+                <div class="card card-hover">
+                    <div class="box bg-white text-center">
+                        <!-- <h1 class="text-white fa fa-address-card m-b-5 font-36"></h1> -->
+                        <h2 class="text-black p-t-20"> Truy vấn gần nhất</h2>
+                        <div class="table-responsive">
+                            <table id="zero_config" class="table table-striped table-bordered m-0">
+                                <thead>
+                                    <tr>
+                                        <th> <b>Thời gian</b> </th>
+                                        <th> <b>Trạng thái</b> </th>
+                                        <th> <b>Tham số</b> </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="request-info-table-loc">
+                                    <tr>
+                                        <td>00:00:00</td>
+                                        <td class="text-success">Thành công</td>
+                                        <td>0101243150</td>
+                                    </tr>
+                                    <tr>
+                                        <td>00:00:00</td>
+                                        <td class="text-success">Thành công</td>
+                                        <td>010121224</td>
+                                    </tr>
+                                    <tr>
+                                        <td>00:00:00</td>
+                                        <td class="text-danger">Thất bại</td>
+                                        <td class="text-danger">012345641</td>
+                                    </tr>
+                                    <tr>
+                                        <td>00:00:00</td>
+                                        <td class="text-success">Thành công</td>
+                                        <td>010120402</td>
+                                    </tr>
+                                    <tr>
+                                        <td>00:00:00</td>
+                                        <td class="text-success">Thành công</td>
+                                        <td>345600444</td>
+                                    </tr>
+                                    <tr>
+                                        <td>00:00:00</td>
+                                        <td class="text-success">Thành công</td>
+                                        <td>0123456437</td>
+                                    </tr>
+                                    <tr>
+                                        <td>00:00:00</td>
+                                        <td class="text-success">Thành công</td>
+                                        <td>4564643154</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>00:00:00</td>
+                                        <td class="text-success">Thành công</td>
+                                        <td>1101210131</td>
+                                    </tr>
+                                    <tr>
+                                        <td>00:00:00</td>
+                                        <td class="text-success">Thành công</td>
+                                        <td>1242150122</td>
+                                    </tr>
+                                    <tr>
+                                        <td>00:00:00</td>
+                                        <td class="text-success">Thành công</td>
+                                        <td>0121354464</td>
+                                    </tr>
+                                    <tr>
+                                        <td>00:00:00</td>
+                                        <td class="text-success">Thành công</td>
+                                        <td>0123156468</td>
+                                    </tr>
+                                    <tr>
+                                        <td>00:00:00</td>
+                                        <td class="text-success">Thành công</td>
+                                        <td>0101243150</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class=" col-lg-6" id="table2" style="overflow: auto;">
+            <div class="ibox">
+                <div class="card card-hover">
+                    <div class="box bg-white text-center">
+                        <!-- <h1 class="text-white fa fa-address-card m-b-5 font-36"></h1> -->
+                        <h2 class="text-black p-t-20"> Phân tách gần nhất</h2>
+                        <div class="table-responsive">
+                            <table id="zero_config" class="table table-striped table-bordered m-0">
+                                <thead>
+                                    <tr>
+                                        <th> <b>Thời gian</b> </th>
+                                        <th> <b>Trạng thái</b> </th>
+                                        <th> <b>Tham số</b> </th>
+                                    </tr>
+                                </thead>
+                                <tbody id="request-info-table-sep">
+                                    <tr>
+                                        <td>00:00:00</td>
+                                        <td class="text-success">Thành công</td>
+                                        <td>0101243150</td>
+                                    </tr>
+                                    <tr>
+                                        <td>00:00:00</td>
+                                        <td class="text-success">Thành công</td>
+                                        <td>010121224</td>
+                                    </tr>
+                                    <tr>
+                                        <td>00:00:00</td>
+                                        <td class="text-danger">Thất bại</td>
+                                        <td class="text-danger">012345641</td>
+                                    </tr>
+                                    <tr>
+                                        <td>00:00:00</td>
+                                        <td class="text-success">Thành công</td>
+                                        <td>010120402</td>
+                                    </tr>
+                                    <tr>
+                                        <td>00:00:00</td>
+                                        <td class="text-success">Thành công</td>
+                                        <td>345600444</td>
+                                    </tr>
+                                    <tr>
+                                        <td>00:00:00</td>
+                                        <td class="text-success">Thành công</td>
+                                        <td>0123456437</td>
+                                    </tr>
+                                    <tr>
+                                        <td>00:00:00</td>
+                                        <td class="text-success">Thành công</td>
+                                        <td>4564643154</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>00:00:00</td>
+                                        <td class="text-success">Thành công</td>
+                                        <td>1101210131</td>
+                                    </tr>
+                                    <tr>
+                                        <td>00:00:00</td>
+                                        <td class="text-success">Thành công</td>
+                                        <td>1242150122</td>
+                                    </tr>
+                                    <tr>
+                                        <td>00:00:00</td>
+                                        <td class="text-success">Thành công</td>
+                                        <td>0121354464</td>
+                                    </tr>
+                                    <tr>
+                                        <td>00:00:00</td>
+                                        <td class="text-success">Thành công</td>
+                                        <td>0123156468</td>
+                                    </tr>
+                                    <tr>
+                                        <td>00:00:00</td>
+                                        <td class="text-success">Thành công</td>
+                                        <td>0101243150</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

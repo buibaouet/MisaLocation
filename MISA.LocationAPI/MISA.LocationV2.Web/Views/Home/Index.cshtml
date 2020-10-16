@@ -1,0 +1,119 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section css
+{
+    <link href="~/css/views/homepage/home.css" rel="stylesheet" asp-append-version="true"/>
+}
+
+@section scripts
+{
+    <script src="~/js/views/homepage/homepage.js" asp-append-version="true"></script>
+}
+
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-xl-5">
+            <div class="ibox">
+                <div class="card card-hover">
+                    <div class="card-body">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14896.237834571415!2d105.77388986751299!3d21.03030678599753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab4cb43bddb7%3A0x3759fd5b5ee902e7!2zVGVjaG5vc29mdCBCdWlsZGluZywgROG7i2NoIFbhu41uZyBI4bqtdSwgQ-G6p3UgR2nhuqV5LCBIw6AgTuG7mWk!5e0!3m2!1svi!2s!4v1589267457863!5m2!1svi!2s" frameborder="0" style="width: 100%; height: 338px; border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-7">
+            <div class="ibox">
+                <div class="card search-box container-fluid">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-9 search-field">
+                                <input tabindex="10" type="text" class="form-control" placeholder="Location ..." />
+                            </div>
+                            <div class="col-sm-3 search-btn">
+                                <button type="button" class="btn btn-block btn-primary font-weight-bold">Search</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card filter-box">
+                    <div class="card-body">
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend bg-danger">
+                                <div class="fa-wrapper">
+                                    <i class="fa fa-globe"></i>
+                                </div>
+                                <b>Country</b>
+                            </div>
+                            <div class="dropdown loc-dropdown">
+                                <button tabindex="20" id="btn-country" type="button" class="btn btn-default btn-block text-left dropdown-toggle pl-3 pr-0 loc" data-toggle="dropdown">Select a country</button>
+                                <div class="loclist dropdown-menu dropdown-menu-right" id="countries" role="menu">
+                                    <div class="dropdown-item">
+                                        <input type="text" class="mini-search" placeholder="Search..." />
+                                        <i class="fa fa-search"></i>
+                                    </div>
+                                    <!-- Danh sách các quốc gia hiển thị ở đây -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend bg-warning">
+                                <div class="fa-wrapper">
+                                    <i class="fa fa-building"></i>
+                                </div>
+                                <b>Province</b>
+                            </div>
+                            <div class="dropdown loc-dropdown">
+                                <button tabindex="30" id="btn-province" type="button" class="btn btn-default btn-block text-left dropdown-toggle pl-3 pr-0 loc" data-toggle="dropdown">Select a city/province</button>
+                                <div class="loclist dropdown-menu dropdown-menu-right" id="provinces" role="menu">
+                                    <div class="dropdown-item">
+                                        <input type="text" class="mini-search" placeholder="Search..." />
+                                        <i class="fa fa-search"></i>
+                                    </div>
+                                    <!-- Danh sách các tỉnh thành hiển thị ở đây -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend bg-primary">
+                                <div class="fa-wrapper">
+                                    <i class="fa fa-university"></i>
+                                </div>
+                                <b>District</b>
+                            </div>
+                            <div class="dropdown loc-dropdown">
+                                <button tabindex="40" id="btn-district" type="button" class="btn btn-default btn-block text-left dropdown-toggle pl-3 pr-0 loc" data-toggle="dropdown">Select a district</button>
+                                <div class="loclist dropdown-menu dropdown-menu-right" id="districts" role="menu">
+                                    <div class="dropdown-item">
+                                        <input type="text" class="mini-search" placeholder="Search..." />
+                                        <i class="fa fa-search"></i>
+                                    </div>
+                                    <!-- Danh sách các quận huyện hiển thị ở đây -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <div class="input-group-prepend bg-success">
+                                <div class="fa-wrapper">
+                                    <i class="fa fa-home"></i>
+                                </div>
+                                <b>Ward</b>
+                            </div>
+                            <div class="dropdown loc-dropdown">
+                                <button tabindex="50" id="btn-ward" type="button" class="btn btn-default btn-block text-left dropdown-toggle pl-3 pr-0 loc" data-toggle="dropdown">Select a ward</button>
+                                <div class="loclist dropdown-menu dropdown-menu-right" id="wards" role="menu">
+                                    <div class="dropdown-item">
+                                        <input type="text" class="mini-search" placeholder="Search..." />
+                                        <i class="fa fa-search"></i>
+                                    </div>
+                                    <!-- Danh sách các xã phường hiển thị ở đây -->
+                                </div> 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

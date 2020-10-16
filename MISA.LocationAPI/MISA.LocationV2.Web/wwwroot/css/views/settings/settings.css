@@ -1,0 +1,94 @@
+﻿.modal-body {
+    padding: 5px 15px 15px 15px;
+}
+
+.dropdown-menu {
+    max-height: 250px;
+    width: 100%;
+    overflow: auto;
+}
+
+.dropdown .btn.dropdown-toggle button {
+    color: #000;
+}
+
+.modal.fade > .modal-dialog {
+    max-width: 35%;
+}
+/* Override default CSS for .dropdown-toggle::after */
+.dropdown-toggle::after {
+    position: absolute;
+    top: 48%;
+    right: 2%;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+}
+
+.dropdown-item {
+    padding: 8px 12px;
+    font-size: 13px;
+    font-family: "Nunito-sans, Arial-sans", sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+}
+
+.dropdown-item:first-child {
+    padding: 3px;
+}
+
+    div.dropdown-item i {
+        position: absolute;
+        right: 4%;
+        top: 33%;
+    }
+
+.btn-showmore, .btn-hide {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+input.mini-search {
+    padding-left: 7px;
+}
+
+.disabled-div {
+    background-color: #e9ecef;
+}
+
+td div.form-control {
+    display: flex;
+    align-items: center;
+}
+
+td.cell-btn {
+    text-align: center;
+}
+
+#parentLocationID {
+    visibility: hidden;
+}
+
+/*
+td.cell-btn button {
+    width: 100px;
+    padding: 6px;
+}
+*/
+
+#tbl-changelogs thead {
+    border: 2px solid #DDDDDD;
+}
+
+@media (max-width: 576px) {
+    .toolbar button {
+        width: 80%;
+    }
+}

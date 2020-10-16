@@ -1,0 +1,123 @@
+﻿@{
+    ViewData["Title"] = "Synchronized ID Location";
+}
+@section css{
+    <link href="~/css/views/synchronized/synchronized.css" rel="stylesheet" />
+    <link href="~/lib/dataTables/datatables.min.css" rel="stylesheet" />
+}
+@section scripts
+{
+    <script src="~/js/views/synchronized/synchronized.js" asp-append-version="true"></script>
+    <script src="~/lib/dataTables/datatables.min.js"></script>
+    <script src="~/lib/dataTables/dataTables.bootstrap4.min.js"></script>
+}
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="card mb-4">
+        <span class="upload-error"></span>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3>File Excel contains oldID:</h3>
+                </div>
+                <div class="col-md-4">
+                    <h3>File Excel contains newID:</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="custom-file input-group">
+                        <input type="file" class="custom-file-input check-file-upload" id="fileNewupload">
+                        <label class="custom-file-label" for="fileNewupload">Choose file .xls or .xlsx</label>
+                    </div>
+                    <span class="input-error"></span>
+                </div>
+                <div class="col-md-4">
+                    <div class="custom-file input-group">
+                        <input type="file" class="custom-file-input check-file-upload" id="fileOldupload">
+                        <label class="custom-file-label" for="fileOldupload">Choose file .xls or .xlsx</label>
+                    </div>
+                    <span class="input-error"></span>
+                </div>
+                <div class="col-md-4 row">
+                    <div class="col-xl-4 col-lg-12">
+                        <button id="btnUpload" class="btn btn-block btn-primary"><i class="fa fa-upload mr-1"></i><b> Upload</b></button>
+                    </div>
+                    <div class="col-xl-4 col-lg-12 btn-group">
+                        <button type="button" class="btn btn-block btn-primary dropdown-toggle" id="btnDownload" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-download mr-1"></i><b> Download</b>
+                        </button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" id="btnDownloadJson">Json</a>
+                            <a class="dropdown-item" id="btnDownloadExcel">Excel</a>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-12">
+                        <button id="btnUpToDB" class="btn btn-block btn-primary"><i class="fa fa-cloud-upload mr-1"></i><b> Update DB</b></button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div id="preload">
+        <div class="loader"></div>
+        <p>Uploading data...</p>
+    </div>
+    <div>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <button class="btn btn-block btn-outline-primary md-4 active" id="btn-duplication">List of location synchronized</button>
+            </div>
+            <div class="col-md-6">
+                <button class="btn btn-block btn-outline-primary md-4" id="btn-different">List of location different</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12" id="table-duplication">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive scrollable-table">
+                            <table class="table table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>New LocationID</th>
+                                        <th>Old LocationID</th>
+                                        <th>LocationName</th>
+                                        <th>District</th>
+                                        <th>Province</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="table-content"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12" id="table-different">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive scrollable-table">
+                            <table class="table table-hover table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>New LocationID</th>
+                                        <th>Old LocationID</th>
+                                        <th>LocationName</th>
+                                        <th>District</th>
+                                        <th>Province</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="table-content"></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

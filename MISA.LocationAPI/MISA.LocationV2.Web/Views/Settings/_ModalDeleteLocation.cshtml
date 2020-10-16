@@ -1,0 +1,168 @@
+﻿<div id="modal-del-loc" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-dialog-scrollable" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 id="modal-del-des">Delete an existing location</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Cập nhật dữ liệu ở đây -->
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Value</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th class="align-middle" scope="row">Country: </th>
+                            <td class="p-b-0">
+                                <div class="input-group input-group-sm mb-0 p-0 dropdown">
+                                    <button id="del-btn-country" type="button" class="btn btn-default btn-block text-left dropdown-toggle btn-input checked-info" data-toggle="dropdown">Select a country</button>
+                                    <div class="dropdown-menu dropdown-menu-right" id="del-countries" role="menu">
+                                        <div class="dropdown-item">
+                                            <input type="text" class="mini-search" placeholder="Search..." />
+                                            <i class="fa fa-search"></i>
+                                        </div>
+                                        <!-- Hiện danh sách quốc gia ở đây -->
+                                    </div>
+                                </div>
+                                <span class="input-error"></span>
+                            </td>
+                            <td id="del-des-country" class="align-middle des-loc"></td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle" scope="row">Province: </th>
+                            <td class="p-b-0">
+                                <div class="input-group input-group-sm mb-0 p-0 dropdown">
+                                    <button id="del-btn-province" type="button" class="btn btn-default btn-block text-left dropdown-toggle btn-input" data-toggle="dropdown">Select a city/province</button>
+                                    <div class="dropdown-menu dropdown-menu-right" id="del-provinces" role="menu">
+                                        <div class="dropdown-item">
+                                            <input type="text" class="mini-search" placeholder="Search..." />
+                                            <i class="fa fa-search"></i>
+                                        </div>
+                                        <!-- Hiện danh sách tỉnh thành ở đây -->
+                                    </div>
+                                </div>
+                            </td>
+                            <td id="del-des-province" class="align-middle des-loc"></td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle" scope="row">District: </th>
+                            <td class="p-b-0">
+                                <div class="input-group input-group-sm mb-0 p-0 dropdown">
+                                    <button id="del-btn-district" type="button" class="btn btn-default btn-block text-left dropdown-toggle btn-input" data-toggle="dropdown">Select a district</button>
+                                    <div class="dropdown-menu dropdown-menu-right" id="del-districts" role="menu">
+                                        <div class="dropdown-item">
+                                            <input type="text" class="mini-search" placeholder="Search..." />
+                                            <i class="fa fa-search"></i>
+                                        </div>
+                                        <!-- Hiện danh sách quận/huyện/TX ở đây -->
+                                    </div>
+                                </div>
+                            </td>
+                            <td id="del-des-district" class="align-middle des-loc"></td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle" scope="row">Ward: </th>
+                            <td class="p-b-0">
+                                <div class="input-group input-group-sm mb-0 p-0 dropdown">
+                                    <button id="del-btn-ward" type="button" class="btn btn-default btn-block text-left dropdown-toggle btn-input" data-toggle="dropdown">Select a ward</button>
+                                    <div class="dropdown-menu dropdown-menu-right" id="del-wards" role="menu">
+                                        <div class="dropdown-item">
+                                            <input type="text" class="mini-search" placeholder="Search..." />
+                                            <i class="fa fa-search"></i>
+                                        </div>
+                                        <!-- Hiện danh sách xã/phường/thị trấn ở đây -->
+                                    </div>
+                                </div>
+                            </td>
+                            <td id="del-des-district" class="align-middle des-loc"></td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle" scope="row">Location name: </th>
+                            <td class="p-b-0">
+                                <div class="input-group input-group-sm mb-0 p-0">
+                                    <div class="location-name disabled-div form-control p-0 pl-2" id="del-location-name"></div>
+                                </div>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle" scope="row">ID: </th>
+                            <td class="p-b-0">
+                                <div class="input-group input-group-sm mb-0 p-0">
+                                    <div class="id id-text disabled-div form-control p-0 pl-2" id="del-id"></div>
+                                </div>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle" scope="row">Location ID: </th>
+                            <td class="p-b-0">
+                                <div class="input-group input-group-sm mb-0 p-0">
+                                    <div class="location-id location-id-text disabled-div form-control p-0 pl-2" id="del-location-id"></div>
+                                </div>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle" scope="row">Kind: </th>
+                            <td class="p-b-0">
+                                <div class="input-group input-group-sm mb-0 p-0">
+                                    <div class="kind form-control disabled-div p-0 pl-2" id="del-kind"></div>
+                                </div>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle" scope="row">Parent ID: </th>
+                            <td class="p-b-0">
+                                <div class="input-group input-group-sm mb-0 p-0">
+                                    <div class="parent-id additional-info disabled-div form-control p-0 pl-2" id="del-parent-id"></div>
+                                </div>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr class="showmore-row">
+                            <td class="cell-btn p-b-0" colspan="3">
+                                <a href="#" class="btn-showmore" id="del-btn-showmore">Show more <i class="fa fa-chevron-down" aria-hidden="true"></i></a>
+                            </td>
+                        </tr>
+                        <tr class="hidden-row">
+                            <th class="align-middle" scope="row">Created Date: </th>
+                            <td class="p-b-0">
+                                <div class="input-group input-group-sm mb-0 p-0">
+                                    <div class="created-date additional-info disabled-div form-control p-0 pl-2" id="del-created-date"></div>
+                                </div>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr class="hidden-row">
+                            <th class="align-middle" scope="row">Modified Date: </th>
+                            <td class="p-b-0">
+                                <div class="input-group input-group-sm mb-0 p-0">
+                                    <div class="modified-date additional-info disabled-div form-control p-0 pl-2" id="del-modified-date"></div>
+                                </div>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr class="hidden-row">
+                            <td class="cell-btn p-b-0" colspan="3">
+                                <a href="#" class="btn-hide" id="del-btn-hide">Hide <i class="fa fa-chevron-up" aria-hidden="true"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- ket thuc bang -->
+            </div>
+            <div class="modal-footer">
+                <button id="del-discard-btn" type="button" class="btn btn-lg btn-discard btn-outline-dark mr-sm-1" data-dismiss="modal">Discard</button>
+                <button id="del-save-btn" type="button" class="btn btn-lg btn-success btn-save mr-sm-1">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

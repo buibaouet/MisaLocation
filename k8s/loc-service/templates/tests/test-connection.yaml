@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "loc-service.fullname" . }}-test-connection"
+  labels:
+    {{- include "loc-service.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test-success
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "loc-service.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never

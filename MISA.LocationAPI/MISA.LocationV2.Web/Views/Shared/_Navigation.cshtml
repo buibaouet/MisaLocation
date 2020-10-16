@@ -1,0 +1,40 @@
+﻿@using MISA.LocationAPI.Extensions;
+
+<!--Xử lý mini-navbar khi load trang. Để đây thì mới không bị giật giật nha-->
+<script>
+    (function () {
+        var isMiniNavbar = window.sessionStorage.getItem("isNavbar");
+        if (isMiniNavbar == 1) {
+            var body = document.getElementsByTagName('body')[0];
+            body.className = body.className + ' mini-navbar';
+        }
+    })();
+</script>
+
+<nav class="navbar-default navbar-static-side" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+            <li class="custom-nav-header">
+                <a class="navbar-brand m-0 profile-element" asp-controller="Home" asp-action="Index">MISA Location</a>
+                <div class="logo-element">
+                    Loc
+                </div>
+            </li>
+            <li class="@Html.IsSelected(controller: "Home", action: "Index")">
+                <a href="@Url.Action("Index", "Home")"><i class="fa fa-home"></i> <span class="nav-label">Home</span></a>
+            </li>
+            <li class="@Html.IsSelected(controller: "Monitor", action: "Index")">
+                <a href="@Url.Action("Index", "Monitor")"><i class="fa fa-desktop"> </i><span class="nav-label">Monitor</span></a>
+            </li>
+            <li class="@Html.IsSelected(controller: "Settings", action: "Index")">
+                <a href="@Url.Action("Index", "Settings")"><i class="fa fa-cog"></i> <span class="nav-label">Settings</span></a>
+            </li>
+            <li class="@Html.IsSelected(controller: "Changes", action: "Index")">
+                <a href="@Url.Action("Index", "Changes")"><i class="fa fa-edit"></i> <span class="nav-label">Changes</span></a>
+            </li>
+            <li class="@Html.IsSelected(controller: "Synchronized", action: "Index")">
+                <a href="@Url.Action("Index", "Synchronized")"><i class="fa fa-files-o"></i> <span class="nav-label">Synchronized</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>

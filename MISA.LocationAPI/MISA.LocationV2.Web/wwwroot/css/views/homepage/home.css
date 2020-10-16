@@ -1,0 +1,153 @@
+﻿.wrapper-content .search-box {
+    margin-bottom: 2em;
+}
+
+.search-box .card-body {
+    padding: 15px;
+}
+
+.search-field {
+    padding-left: 0;
+    padding-right: 5px;
+}
+
+.search-btn {
+    padding-left: 5px;
+    padding-right: 0px;
+}
+
+    .search-btn button {
+        padding: 12px;
+    }
+
+.wrapper-content .filter-box select {
+    margin-left: 8px;
+}
+
+.filter-box {
+    background-color: #f1f1f1;
+}
+
+    .filter-box .input-group-prepend {
+        width: 200px;
+        display: flex;
+        align-items: center;
+        font-family: "Nunito Sans", sans-serif;
+    }
+
+        .filter-box .input-group-prepend .fa-wrapper {
+            width: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 8px;
+            margin-right: 12px;
+        }
+
+        .filter-box .input-group-prepend .fa-wrapper i {
+            margin: auto;
+        }
+
+        .filter-box .input-group-prepend span {
+            color: #fffbf6;
+        }
+
+div.loc-dropdown.dropdown {
+    display: inline-block;
+    width: calc(100% - 200px);
+}
+
+    .loc-dropdown .loc {
+        color: #000;
+        padding: 12px;
+    }
+
+/* Override default CSS for .dropdown-toggle::after */
+.dropdown-toggle::after {
+    position: absolute;
+    top: 48%;
+    right: 2%;
+    display: inline-block;
+    width: 0;
+    height: 0;
+    content: "";
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-bottom: 0;
+    border-left: 0.3em solid transparent;
+}
+
+.dropdown-menu {
+    max-height: 270px;
+    max-width: 200px;
+    overflow-y: scroll;
+}
+
+.dropdown-item {
+    padding: 8px 12px;
+    font-family: "Nunito-sans, Arial-sans", sans-serif;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+}
+
+.dropdown-item:first-child {
+    padding: 3px;
+}
+
+.mini-search {
+    padding-left: 7px;
+    font-size: 14px;
+}
+
+a.dropdown-item {
+    font-size: 14px;
+}
+
+    div.dropdown-item i {
+        position: absolute;
+        right: 5%;
+        top: 33%;
+        font-size: 1.5em;
+    }
+
+
+@media (max-width: 992px) {
+    iframe {
+        height: 300px !important;
+    }
+}
+
+@media (max-width: 767.9px) {
+}
+
+@media (max-width: 576px) {
+    .search-field {
+        margin-bottom: 5px;
+        padding-right: 0;
+    }
+
+    .search-btn {
+        padding: 0;
+    }
+
+    .filter-box .input-group-prepend {
+        width: 100%;
+        padding: 8px 0;
+    }
+
+    .wrapper-content {
+        padding-left: 0px;
+    }
+
+    .dropdown {
+        width: 100% !important;
+    }
+
+    .loc-dwn {
+        position: absolute;
+        right: 4%;
+        top: 55%;
+    }
+}

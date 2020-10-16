@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewData["Title"] = "Changes";
+}
+
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="ibox">
+                    <div class="ibox-title">
+                        <h5>Drop your file here</h5>
+                    </div>
+                    <div class="ibox-content">
+                        <form method="post" action="/changes" class="dropzone" id="dropzoneForm">
+                            <div class="fallback">
+                                <input name="file" type="file" /> <!-- tam thoi bo di tuy chon multiple -->
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <button id="btn-upload-check" class="btn btn-lg btn-block btn-primary btn-block mb-4">Check changes</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h3>List of changes</h3>
+                <div class="card">
+                    <div class="card-body">
+                        <div class="table-responsive scrollable-table">
+                            <table id="tbl-filechanges" class="table table-hover table-bordered dataTables-example">
+                                <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>New province</th>
+                                        <th>New district</th>
+                                        <th>New locationID</th>
+                                        <th>New location name</th>
+                                        <th>Old location name</th>
+                                        <th>Old locationID</th>
+                                        <th>Old district</th>
+                                        <th>Old province</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+@section css {
+    <link href="~/lib/dropzone/basic.css" rel="stylesheet" />
+    <link href="~/lib/dropzone/dropzone.css" rel="stylesheet" />
+    <link href="~/lib/dataTables/datatables.min.css" rel="stylesheet" />
+    <link href="~/css/views/changes/changes.css" rel="stylesheet" />
+}
+
+@section scripts {
+    <script src="~/lib/dropzone/dropzone.js"></script>
+    <script src="~/lib/dataTables/datatables.min.js"></script>
+    <script src="~/lib/dataTables/dataTables.bootstrap4.min.js"></script>
+    <script src="~/js/views/changes/changes.js"></script>
+
+}

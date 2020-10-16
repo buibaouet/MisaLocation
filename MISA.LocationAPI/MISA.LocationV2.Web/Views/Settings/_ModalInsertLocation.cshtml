@@ -1,0 +1,126 @@
+﻿<div id="modal-ins-loc" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 id="modal-ins-des">Add a new location</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <!-- Thêm mới dữ liệu ở đây -->
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Value</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th class="align-middle" scope="row">Country: </th>
+                            <td class="p-b-0">
+                                <div class="input-group input-group-sm mb-0 p-0 dropdown">
+                                    <button id="ins-btn-country" type="button" class="btn btn-default btn-block text-left dropdown-toggle btn-input" data-toggle="dropdown">Select a country</button>
+                                    <div class="dropdown-menu dropdown-menu-right" id="ins-countries" role="menu">
+                                        <div class="dropdown-item">
+                                            <input type="text" class="mini-search" placeholder="Search..." />
+                                            <i class="fa fa-search"></i>
+                                        </div>
+                                        <!-- Hiện danh sách quốc gia ở đây -->
+                                    </div>
+                                </div>
+                            </td>
+                            <td id="ins-des-country" class="align-middle des-loc"></td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle" scope="row">Province: </th>
+                            <td class="p-b-0">
+                                <div class="input-group input-group-sm mb-0 p-0 dropdown">
+                                    <button id="ins-btn-province" type="button" class="btn btn-default btn-block text-left dropdown-toggle btn-input" data-toggle="dropdown">Select a city/province</button>
+                                    <div class="dropdown-menu dropdown-menu-right" id="ins-provinces" role="menu">
+                                        <div class="dropdown-item">
+                                            <input type="text" class="mini-search" placeholder="Search..." />
+                                            <i class="fa fa-search"></i>
+                                        </div>
+                                        <!-- Hiện danh sách tỉnh thành ở đây -->
+                                    </div>
+                                </div>
+                            </td>
+                            <td id="ins-des-province" class="align-middle des-loc"></td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle" scope="row">District: </th>
+                            <td class="p-b-0">
+                                <div class="input-group input-group-sm mb-0 p-0 dropdown">
+                                    <button id="ins-btn-district" type="button" class="btn btn-default btn-block text-left dropdown-toggle btn-input" data-toggle="dropdown">Select a district</button>
+                                    <div class="dropdown-menu dropdown-menu-right" id="ins-districts" role="menu">
+                                        <div class="dropdown-item">
+                                            <input type="text" class="mini-search" placeholder="Search..." />
+                                            <i class="fa fa-search"></i>
+                                        </div>
+                                        <!-- Hiện danh sách quận/huyện/TX ở đây -->
+                                    </div>
+                                </div>
+                            </td>
+                            <td id="ins-des-district" class="align-middle des-loc"></td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle" scope="row">Location name: </th>
+                            <td class="p-b-0">
+                                <div class="input-group input-group-sm mb-0 p-0 dropdown">
+                                    <input type="text" class="location-name checked-info form-control p-0 pl-2" id="ins-location-name">
+                                </div>
+                                <span class="input-error"></span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle" scope="row">ID: </th>
+                            <td class="p-b-0">
+                                <div class="input-group input-group-sm mb-0 p-0">
+                                    <input type="text" class="id id-val checked-info form-control p-0 pl-2" maxlength="12" id="ins-id">
+                                </div>
+                                <span class="input-error"></span>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle" scope="row">Location ID: </th>
+                            <td class="p-b-0">
+                                <div class="input-group input-group-sm mb-0 p-0">
+                                    <input type="text" class="location-id location-id-val checked-info form-control p-0 pl-2" maxlength="9" id="ins-location-id">
+                                </div>
+                                <span class="input-error"></span>
+                            </td>
+                            <td id="parentLocationID"></td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle" scope="row">Kind: </th>
+                            <td class="p-b-0">
+                                <div class="input-group input-group-sm mb-0 p-0">
+                                    <div class="kind disabled-div form-control p-0 pl-2" id="ins-kind"></div>
+                                </div>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <th class="align-middle" scope="row">Parent ID: </th>
+                            <td class="p-b-0">
+                                <div class="input-group input-group-sm mb-0 p-0">
+                                    <div class="parent-id additional-info disabled-div form-control p-0 pl-2" id="ins-parent-id"></div>
+                                </div>
+                            </td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- kết thúc bảng -->
+            </div>
+            <div class="modal-footer">
+                <button id="ins-discard-btn" type="button" class="btn btn-lg btn-discard btn-outline-dark btn-discard mr-sm-1" data-dismiss="modal">Discard</button>
+                <button id="ins-save-btn" type="button" class="btn btn-lg btn-success btn-save mr-sm-1">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
